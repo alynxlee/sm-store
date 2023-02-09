@@ -1,0 +1,19 @@
+body {
+  .memberWrap {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    #gnbMember {
+      width: 270px;
+      display: flex;
+      justify-content: space-between;
+      li {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

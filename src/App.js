@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+// Components
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+// goBtn
+import Go from './components/Go';
+
+// pages
+import ProductList from './pages/ProductList';
+
+// style
+import './assets/styles/style.scss';
+import Login from './pages/Login';
+import Join from './pages/Join';
+import Mypage from './pages/Mypage';
+import Search from './pages/Search';
+import Cart from './pages/Cart';
+import Collection from './pages/Collection';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="product">
+          <Route index element={<ProductList />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="join" element={<Join />} />
+        <Route path="mypage" element={<Mypage />} />
+        <Route path="search" element={<Search />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="collection" element={<Collection />} />
+      </Routes>
+      <Footer />
+      <Go />
+    </>
   );
 }
 
