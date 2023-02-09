@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 // style
-import '../styles/nav.scss';
+import "../styles/nav.scss";
 
 function Nav() {
   return (
@@ -12,7 +12,7 @@ function Nav() {
           <Link to="/celeb">CELEB</Link>
         </li>
         <li>
-          <Link to="/product">PRODUCT</Link>
+          <Link to="/">PRODUCT</Link>
         </li>
         <li>
           <Link to="/pick">&amp;P!CK</Link>

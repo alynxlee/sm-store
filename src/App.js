@@ -1,30 +1,30 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
 // Components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // goBtn
-import Go from './components/Go';
+import Go from "./components/Go";
 
 // pages
-import ProductList from './pages/ProductList';
+import ProductList from "./pages/ProductList";
 
 // style
-import './assets/styles/style.scss';
-import Login from './pages/Login';
-import Join from './pages/Join';
-import Mypage from './pages/Mypage';
-import Search from './pages/Search';
-import Cart from './pages/Cart';
-import Collection from './pages/Collection';
+import "./assets/styles/style.scss";
+import Login from "./pages/Login";
+import Join from "./pages/Join";
+import Mypage from "./pages/Mypage";
+import Search from "./pages/Search";
+import Cart from "./pages/Cart";
+import Collection from "./pages/Collection";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="product">
+        <Route path="/">
           <Route index element={<ProductList />} />
         </Route>
         <Route path="login" element={<Login />} />

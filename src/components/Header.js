@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // components
-import Nav from './Nav';
-import Member from './Member';
+import Nav from "./Nav";
+import Member from "./Member";
 
 // style
-import '../styles/header.scss';
+import "../styles/header.scss";
 
 function Header() {
   return (
@@ -32,7 +32,7 @@ function Header() {
       </ul>
       <div className="navWrapper">
         <Nav />
-        <Link to="/product" className="logo">
+        <Link to="/" className="logo">
           Logo
         </Link>
         <Member />
