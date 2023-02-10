@@ -1,225 +1,69 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import categoryData from '../assets/DB/CategoryData';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
+import categoryData from "../assets/DB/CategoryData";
 
 // style
-import '../styles/catergory.scss';
+import "../styles/catergory.scss";
 
 function Category() {
   const [category, setCategory] = useState(categoryData);
-  // const [open, setOpen] = useState(false);
-  const menu = useRef(null);
-  const onToggle = () => {
-    menu.current.classList.toggle('on');
-  };
 
-  // useEffect(() => {
-  //   const openSub = () => {
-  //     open.addEventListener('click', () => {
-  //       menu.current.classList.toggle('on');
-  //     });
-  //   };
-  //   openSub();
-  // }, []);
+  const [isShow, setIsShow] = useState(null);
+  const onToggle = (id) => {
+    setIsShow((prev) => {
+      return prev === id ? null : id;
+    });
+  };
 
   return (
     <div className="category">
       <h2>PRODUCT</h2>
       <ul className="productMenu">
-        {/* <li className="menu" ref={menu}>
-          <div>
-            <Link>MUSIC</Link>
-            <span className="subArrow" onClick={() => onToggle()}></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>CD</Link>
-            </li>
-            <li>
-              <Link>DVD</Link>
-            </li>
-            <li>
-              <Link>etc.</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu" ref={menu}>
-          <div>
-            <Link>PHOTO</Link>
-            <span className="subArrow" onClick={() => onToggle()}></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Printed</Link>
-            </li>
-            <li>
-              <Link>Photo Book</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>CONCERT</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Official Fanlight</Link>
-            </li>
-            <li>
-              <Link>Concert Goods</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>LIVING</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Home</Link>
-            </li>
-            <li>
-              <Link>Kitchen</Link>
-            </li>
-            <li>
-              <Link>F&B</Link>
-            </li>
-            <li>
-              <Link>Tech</Link>
-            </li>
-            <li>
-              <Link>Book</Link>
-            </li>
-            <li>
-              <Link>Pet</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>BEAUTY</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Skin Care</Link>
-            </li>
-            <li>
-              <Link>Make Up</Link>
-            </li>
-            <li>
-              <Link>Cleansing</Link>
-            </li>
-            <li>
-              <Link>Body & Hair</Link>
-            </li>
-            <li>
-              <Link>Pack & Masks</Link>
-            </li>
-            <li>
-              <Link>Perfume</Link>
-            </li>
-            <li>
-              <Link>Tool</Link>
-            </li>
-            <li>
-              <Link>Men's</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>STATIONERY</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Note</Link>
-            </li>
-            <li>
-              <Link>Office</Link>
-            </li>
-            <li>
-              <Link>Pen</Link>
-            </li>
-            <li>
-              <Link>Deco</Link>
-            </li>
-            <li>
-              <Link>Binder</Link>
-            </li>
-            <li>
-              <Link>Toy</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>FASHION</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Clothing</Link>
-            </li>
-            <li>
-              <Link>Acc</Link>
-            </li>
-            <li>
-              <Link>Jewelry</Link>
-            </li>
-          </ul>
-        </li>
-        <li className="menu">
-          <div>
-            <Link>CUSTOMIZING</Link>
-            <span className="subArrow"></span>
-          </div>
-          <ul className="subMenu">
-            <li>
-              <Link>Phone Case</Link>
-            </li>
-            <li>
-              <Link>Fashion</Link>
-            </li>
-            <li>
-              <Link>Acc</Link>
-            </li>
-          </ul>
-        </li> */}
-        {category.map(item => {
+        {category.map((item) => {
+          const {
+            id,
+            menu,
+            menuTitle,
+            subTitle1,
+            subTitle2,
+            subTitle3,
+            subTitle4,
+            subTitle5,
+            subTitle6,
+            subTitle7,
+            subTitle8,
+          } = item;
           return (
-            <li key={item.id} className="menu" ref={menu}>
+            <li key={id} className={`menu ${isShow === id ? "on" : ""}`}>
               <div>
-                <Link to={item.menu}>{item.menuTitle}</Link>
-                <span className="subArrow" onClick={() => onToggle()}></span>
+                <Link to={menu}>{menuTitle}</Link>
+                <span className="subArrow" onClick={() => onToggle(id)}></span>
               </div>
               <ul className="subMenu">
                 <li>
-                  <Link>{item.subTitle1}</Link>
+                  <Link>{subTitle1}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle2}</Link>
+                  <Link>{subTitle2}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle3}</Link>
+                  <Link>{subTitle3}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle4}</Link>
+                  <Link>{subTitle4}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle5}</Link>
+                  <Link>{subTitle5}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle6}</Link>
+                  <Link>{subTitle6}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle7}</Link>
+                  <Link>{subTitle7}</Link>
                 </li>
                 <li>
-                  <Link>{item.subTitle8}</Link>
+                  <Link>{subTitle8}</Link>
                 </li>
               </ul>
             </li>

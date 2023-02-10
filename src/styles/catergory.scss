@@ -13,7 +13,8 @@ body {
       .menu {
         &.on {
           .subArrow {
-            background: url(../assets/images/iconMinus.png) no-repeat 50% / contain;
+            background: url(../assets/images/iconMinus.png) no-repeat 50% /
+              contain;
           }
           .subMenu {
             display: block;
@@ -73,7 +74,7 @@ body {
           justify-content: space-between;
           align-items: center;
           a {
-            width: 90%;
+            width: 70%;
             font-size: 16px;
             font-weight: 500;
             color: #2d2f45;
@@ -83,7 +84,8 @@ body {
             display: block;
             width: 15px;
             height: 9px;
-            background: url(../assets/images/iconPlus.png) no-repeat 50% / contain;
+            background: url(../assets/images/iconPlus.png) no-repeat 50% /
+              contain;
             cursor: pointer;
           }
         }
