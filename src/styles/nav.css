@@ -1,0 +1,11 @@
+body nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+body nav #gnb {
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15.5px;
+}

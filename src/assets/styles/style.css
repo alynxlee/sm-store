@@ -113,4 +113,6 @@ a {
 }
 body {
   font-family: "smtown", "Noto Sans KR", Verdana, Dotum, AppleGothic, sans-serif;
+  width: 1200px;
+  margin: 0 auto;
 }

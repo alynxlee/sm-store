@@ -1,0 +1,14 @@
+body .memberWrap {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+body .memberWrap #gnbMember {
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+}
+body .memberWrap #gnbMember li img {
+  width: 100%;
+  height: 100%;
+}
