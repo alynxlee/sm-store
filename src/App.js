@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Go from "./components/Go";
 
 // pages
-import ProductList from "./pages/ProductList";
+import Product from "./pages/Product";
 
 // style
 import "./assets/styles/style.scss";
@@ -25,7 +25,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/">
-          <Route index element={<ProductList />} />
+          <Route index element={<Product />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="join" element={<Join />} />

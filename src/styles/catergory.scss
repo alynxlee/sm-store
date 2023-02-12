@@ -17,12 +17,12 @@ body {
               contain;
           }
           .subMenu {
-            display: block;
             margin: 0 0 10px 17px;
             li {
               height: 32px;
               line-height: 32px;
               color: #2d2f45;
+              height: 100%;
             }
           }
           &:nth-child(1) {
@@ -90,7 +90,11 @@ body {
           }
         }
         .subMenu {
-          display: none;
+          overflow: hidden;
+          transition: 0.5s;
+          li {
+            height: 0;
+          }
         }
       }
     }

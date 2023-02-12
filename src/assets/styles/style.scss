@@ -1,12 +1,14 @@
 // reset
-@import 'reset';
+@import "reset";
 // font
-@import 'fonts';
+@import "fonts";
 // variable
-@import 'variable';
+@import "variable";
 
 body {
   font-family: $smtown;
+  height: 100%;
   width: 1200px;
   margin: 0 auto;
+  color: #2f2d43;
 }

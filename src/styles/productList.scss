@@ -1,0 +1,37 @@
+body {
+  .listWrapper {
+    display: flex;
+    justify-content: space-between;
+    .productListContainer {
+      height: 100%;
+      .productList {
+        width: 940px;
+        padding-bottom: 20px;
+        .productListWrap {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 15px;
+          row-gap: 50px;
+          transform: translateX(15px);
+          .productListItem {
+            width: 298px;
+            .titleWrapper {
+              li {
+                &:nth-child(1) {
+                  color: #a7a9b5;
+                }
+              }
+            }
+          }
+        }
+      }
+      .productMore {
+        height: 60px;
+        line-height: 60px;
+        margin: 30px auto 0;
+        border-top: 1px solid #d9d8de;
+        text-align: center;
+      }
+    }
+  }
+}
