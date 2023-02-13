@@ -1,0 +1,96 @@
+{
+  "PrdAllDetail": [
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "2",
+      "mainImg": "product1Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "product1Detail1.jpg"
+    },
+    {
+      "id": "3",
+      "mainImg": "product2Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "product2Main.jpg"
+    },
+    {
+      "id": "4",
+      "mainImg": "product3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "product3Main.jpg"
+    },
+    {
+      "id": "5",
+      "mainImg": "product4Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "product4Detail1.jpg"
+    },
+    {
+      "id": "6",
+      "mainImg": "product5Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "product5Detail1.jpg",
+      "detail2": "product5Detail2.jpg",
+      "detail3": "product5Detail3.jpg"
+    },
+    {
+      "id": "7",
+      "mainImg": "product6Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    },
+    {
+      "id": "1",
+      "mainImg": "magazineBaekhyun3Main.jpg",
+      "common": "detailCommon.jpg",
+      "detail1": "magazineBaekhyun3Detail1.jpg"
+    }
+  ]
+}
