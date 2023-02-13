@@ -1,18 +1,28 @@
 {
   "files": {
-    "main.css": "/sm-store/static/css/main.d8c24994.css",
-    "main.js": "/sm-store/static/js/main.2ca8570e.js",
+    "main.css": "/sm-store/static/css/main.11b22ee9.css",
+    "main.js": "/sm-store/static/js/main.1281f76b.js",
     "static/media/logo.svg": "/sm-store/static/media/logo.19194b6b5a08de5bd5e5.svg",
+    "static/media/CIRCLE_homever.png": "/sm-store/static/media/CIRCLE_homever.0aa53340f9a906c16cb9.png",
+    "static/media/footerSMLogo.svg": "/sm-store/static/media/footerSMLogo.7117605db6fb2276ea4e2ef0d23f7a25.svg",
     "static/media/SMTOWNOTF-Bold.woff2": "/sm-store/static/media/SMTOWNOTF-Bold.65b2996d7377b8b31bf0.woff2",
     "static/media/SMTOWNOTF-Medium.woff2": "/sm-store/static/media/SMTOWNOTF-Medium.f0c8ec4c585c7e067f24.woff2",
     "static/media/SMTOWNOTF-Light.woff2": "/sm-store/static/media/SMTOWNOTF-Light.9a4270162a1aa74c7d7c.woff2",
     "static/media/SMTOWNOTF-Regular.woff2": "/sm-store/static/media/SMTOWNOTF-Regular.c41d848e5c8d6ee8bfdc.woff2",
+    "static/media/footerTwitter.svg": "/sm-store/static/media/footerTwitter.1230a657342363518e7cded80ebda19a.svg",
+    "static/media/footerInstagram.svg": "/sm-store/static/media/footerInstagram.f80542d2fd6779b466fdc8acb7ab0816.svg",
+    "static/media/footerPopUp.svg": "/sm-store/static/media/footerPopUp.db8d26652e68c57bad6184c17ffab4a1.svg",
+    "static/media/footerAppStore.svg": "/sm-store/static/media/footerAppStore.c18f902dee9fd2558578b53adf0feab7.svg",
+    "static/media/goUp.svg": "/sm-store/static/media/goUp.5805ec9551729b4b06e8c179daf67554.svg",
+    "static/media/goDown.svg": "/sm-store/static/media/goDown.4a6392336961c37159ad69e49cae3d8f.svg",
+    "static/media/footerYoutube.svg": "/sm-store/static/media/footerYoutube.4d5fa656b97f3d95a4c59b1de6b618ce.svg",
+    "static/media/footerFacebook.svg": "/sm-store/static/media/footerFacebook.596e159109645a1b76113783808e8ef2.svg",
     "index.html": "/sm-store/index.html",
-    "main.d8c24994.css.map": "/sm-store/static/css/main.d8c24994.css.map",
-    "main.2ca8570e.js.map": "/sm-store/static/js/main.2ca8570e.js.map"
+    "main.11b22ee9.css.map": "/sm-store/static/css/main.11b22ee9.css.map",
+    "main.1281f76b.js.map": "/sm-store/static/js/main.1281f76b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8c24994.css",
-    "static/js/main.2ca8570e.js"
+    "static/css/main.11b22ee9.css",
+    "static/js/main.1281f76b.js"
   ]
 }
