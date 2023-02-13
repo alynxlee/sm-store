@@ -1,14 +1,14 @@
-import "../styles/productList.scss";
+import '../styles/productList.scss';
 
-import data from "../assets/DB/ListData.json";
-import { Link } from "react-router-dom";
+import data from '../assets/DB/ListData.json';
+import { Link } from 'react-router-dom';
 
 function ProductList() {
   const path = process.env.PUBLIC_URL;
   return (
     <div className="productListContainer">
       <div className="productList">
-        <div>
+        <div className="sortWrapper">
           <select name="sort" className="sort">
             <option value="recent">최신순</option>
             <option value="name">상품명</option>
@@ -18,15 +18,12 @@ function ProductList() {
         </div>
         <div>
           <ul className="productListWrap">
-            {data.ProductAll.map((item) => {
+            {data.ProductAll.map(item => {
               const { id, img, celeb, title, price, dcPrice, dcRate } = item;
               return (
                 <li key={id} className="productListItem">
                   <Link>
-                    <img
-                      src={path + `/images/${img}`}
-                      alt={`${celeb} + ${title}`}
-                    />
+                    <img src={path + `/images/${img}`} alt={`${celeb} + ${title}`} />
                   </Link>
                   <Link>
                     <ul className="titleWrapper">
@@ -41,6 +38,9 @@ function ProductList() {
                     </li>
                     <li>{dcRate}</li>
                   </ul>
+                  <Link>
+                    <div className="cartIcon">cart</div>
+                  </Link>
                 </li>
               );
             })}

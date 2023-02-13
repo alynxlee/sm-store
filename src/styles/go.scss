@@ -1,0 +1,22 @@
+body {
+  .wrap {
+    position: relative;
+    .container {
+      .goWrapper {
+        position: fixed;
+        right: 40px;
+        bottom: 43px;
+        z-index: 4;
+        transition: 0.5s;
+        &.absolute {
+          position: absolute;
+        }
+        .goUp,
+        .goDown {
+          margin: 8px 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
