@@ -8,7 +8,7 @@ body {
           position: relative;
           height: 840px;
           &::before {
-            content: '';
+            content: "";
             width: 1200px;
             height: 100%;
             background-color: #f2f2f2;
@@ -33,6 +33,76 @@ body {
     }
     .prdSbWrapper {
       width: 350px;
+      .headingArea {
+        margin: 15px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d4d5d9;
+        .titleWrapper {
+          li {
+            &:nth-child(1) {
+              color: #abacb1;
+              padding-bottom: 5px;
+            }
+            &:nth-child(2) {
+              color: #2d2f44;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+        }
+        .priceWrapper {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .priceContainer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            li {
+              font-size: 20px;
+              font-weight: 500;
+              &.costPrice {
+                color: #bcbdc3;
+                // padding-left: 10px;
+                text-decoration: line-through;
+                font-size: 16px;
+              }
+              &.dcRate {
+                color: #e5433e;
+                font-size: 16px;
+              }
+            }
+          }
+          .share {
+            width: 20px;
+            height: 20px;
+            background: url(../assets/images/detailSns.png) no-repeat 50% /
+              contain;
+            text-indent: -9999px;
+          }
+        }
+      }
+      .saveDes {
+        .save {
+          .arrowIcon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 12px;
+            height: 6px;
+            background: url(../assets/images/detail-arrow-down.png) no-repeat
+              50% / contain;
+            text-indent: -9999px;
+          }
+        }
+        .hoverWrapper {
+          display: none;
+        }
+        .des {
+          color: #f76560;
+          font-size: 14px;
+        }
+      }
     }
   }
 }

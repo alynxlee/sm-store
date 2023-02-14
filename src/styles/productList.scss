@@ -60,7 +60,8 @@ body {
           .menu {
             &.on {
               .subArrow {
-                background: url(../assets/images/iconMinus.png) no-repeat 50% / contain;
+                background: url(../assets/images/iconMinus.png) no-repeat 50% /
+                  contain;
               }
               .subMenu {
                 margin: 0 0 10px 17px;
@@ -130,7 +131,8 @@ body {
                 display: block;
                 width: 15px;
                 height: 9px;
-                background: url(../assets/images/iconPlus.png) no-repeat 50% / contain;
+                background: url(../assets/images/iconPlus.png) no-repeat 50% /
+                  contain;
                 cursor: pointer;
               }
             }
@@ -193,33 +195,24 @@ body {
                 font-size: 14px;
                 font-weight: 500;
                 color: #232744;
-              }
-              &:nth-child(2),
-              &:nth-child(5),
-              &:nth-child(6),
-              &:nth-child(7),
-              &:nth-child(11) {
-                .priceWrapper {
-                  li {
-                    &:nth-child(1) {
-                      display: flex;
-                      width: 130px;
-                      justify-content: space-between;
-                      span {
-                        &:nth-child(2) {
-                          color: #bdbec5;
-                          text-decoration: line-through;
-                        }
-                      }
+                li {
+                  &:nth-child(1) {
+                    display: flex;
+                    width: 140px;
+                    justify-content: space-between;
+                    .costPrice {
+                      color: #bdbec5;
+                      text-decoration: line-through;
                     }
+                  }
 
-                    &:nth-child(2) {
-                      color: #f02933;
-                      padding-right: 15px;
-                    }
+                  &:nth-child(2) {
+                    color: #f02933;
+                    padding-right: 15px;
                   }
                 }
               }
+
               .cartIcon {
                 text-indent: -9999px;
                 position: absolute;
@@ -227,7 +220,8 @@ body {
                 bottom: 40px;
                 width: 20px;
                 height: 24px;
-                background: url(../assets/images/iconCart.png) no-repeat 50% / cover;
+                background: url(../assets/images/iconCart.png) no-repeat 50% /
+                  cover;
               }
             }
           }

@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function ProductItem({ item }) {
-  const { id, img, celeb, title, price, dcPrice, dcRate } = item;
+  const { id, img, celeb, title, price, costPrice, dcRate } = item;
   const path = process.env.PUBLIC_URL;
   return (
     <>
@@ -17,8 +17,8 @@ function ProductItem({ item }) {
         </Link>
         <ul className="priceWrapper">
           <li>
-            <span>{dcPrice}</span>
             <span>{price}</span>
+            <span className="costPrice">{costPrice}</span>
           </li>
           <li>{dcRate}</li>
         </ul>
