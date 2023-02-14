@@ -1,0 +1,38 @@
+body {
+  .prdDetailWrapper {
+    display: flex;
+    .prdInfoWrapper {
+      .prdInfo {
+        width: 850px;
+        .mainImgWrapper {
+          position: relative;
+          height: 840px;
+          &::before {
+            content: '';
+            width: 1200px;
+            height: 100%;
+            background-color: #f2f2f2;
+            position: absolute;
+            transform: translateX(-393.5px);
+            z-index: -1;
+          }
+          img {
+            margin-top: 14px;
+          }
+        }
+        .detailImgWrapper {
+          margin: 75px 0 0;
+          .detailImg {
+            width: 760px;
+            max-width: 100%;
+            height: auto;
+            margin: 40px auto;
+          }
+        }
+      }
+    }
+    .prdSbWrapper {
+      width: 350px;
+    }
+  }
+}

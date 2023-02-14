@@ -1,9 +1,149 @@
 body {
   .product {
     padding-bottom: 80px;
+    .swiperWrapper {
+      margin: 30px auto 50px;
+      .mySwiper {
+        position: relative;
+        width: 100%;
+        height: 450px;
+
+        img {
+          width: 100%;
+          height: 400px;
+        }
+
+        .swiper-button-prev {
+          transform: translate(430px, 208px) scale(0.5, 0.45);
+          color: #888;
+          z-index: 99;
+        }
+        .swiper-button-next {
+          transform: translate(-430px, 208px) scale(0.5, 0.45);
+          color: #888;
+          z-index: 99;
+        }
+        .swiper-pagination {
+          position: absolute;
+          bottom: 2%;
+          .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            margin: 0 7px;
+          }
+          .swiper-pagination-bullet-active {
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            border: 1px solid #121212;
+            margin: 0 5px;
+            vertical-align: middle;
+            transform: translateY(-10%);
+          }
+        }
+      }
+    }
     .listWrapper {
       display: flex;
       justify-content: space-between;
+      .category {
+        width: 200px;
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+          color: #2d2f45;
+          padding-bottom: 10px;
+          border-bottom: 2px #2d2f45 solid;
+          margin-bottom: 13px;
+        }
+        .productMenu {
+          .menu {
+            &.on {
+              .subArrow {
+                background: url(../assets/images/iconMinus.png) no-repeat 50% / contain;
+              }
+              .subMenu {
+                margin: 0 0 10px 17px;
+                li {
+                  height: 32px;
+                  line-height: 32px;
+                  color: #2d2f45;
+                  height: 100%;
+                }
+              }
+              &:nth-child(1) {
+                .subMenu {
+                  li {
+                    &:nth-child(n + 4):nth-child(-n + 8) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              &:nth-child(2),
+              &:nth-child(3) {
+                .subMenu {
+                  li {
+                    &:nth-child(n + 3):nth-child(-n + 8) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              &:nth-child(4),
+              &:nth-child(6) {
+                .subMenu {
+                  li {
+                    height: 32px;
+                    line-height: 32px;
+                    color: #2d2f45;
+                    &:nth-child(7),
+                    &:nth-child(8) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              &:nth-child(7),
+              &:nth-child(8) {
+                .subMenu {
+                  li {
+                    &:nth-child(n + 3):nth-child(-n + 8) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+            div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              a {
+                width: 70%;
+                font-size: 16px;
+                font-weight: 500;
+                color: #2d2f45;
+                margin: 10px 0;
+              }
+              .subArrow {
+                display: block;
+                width: 15px;
+                height: 9px;
+                background: url(../assets/images/iconPlus.png) no-repeat 50% / contain;
+                cursor: pointer;
+              }
+            }
+            .subMenu {
+              overflow: hidden;
+              transition: 0.5s;
+              li {
+                height: 0;
+              }
+            }
+          }
+        }
+      }
       .productListContainer {
         height: 100%;
         .productList {
@@ -57,7 +197,8 @@ body {
               &:nth-child(2),
               &:nth-child(5),
               &:nth-child(6),
-              &:nth-child(10) {
+              &:nth-child(7),
+              &:nth-child(11) {
                 .priceWrapper {
                   li {
                     &:nth-child(1) {
@@ -67,6 +208,7 @@ body {
                       span {
                         &:nth-child(2) {
                           color: #bdbec5;
+                          text-decoration: line-through;
                         }
                       }
                     }

@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import categoryData from "../assets/DB/CategoryData";
+import categoryData from '../assets/DB/CategoryData';
 
 // style
-import "../styles/catergory.scss";
 
 function Category() {
   const [category, setCategory] = useState(categoryData);
 
   const [isShow, setIsShow] = useState(null);
-  const onToggle = (id) => {
-    setIsShow((prev) => {
+  const onToggle = id => {
+    setIsShow(prev => {
       return prev === id ? null : id;
     });
   };
@@ -20,7 +19,7 @@ function Category() {
     <div className="category">
       <h2>PRODUCT</h2>
       <ul className="productMenu">
-        {category.map((item) => {
+        {category.map(item => {
           const {
             id,
             menu,
@@ -35,7 +34,7 @@ function Category() {
             subTitle8,
           } = item;
           return (
-            <li key={id} className={`menu ${isShow === id ? "on" : ""}`}>
+            <li key={id} className={`menu ${isShow === id ? 'on' : ''}`}>
               <div>
                 <Link to={menu}>{menuTitle}</Link>
                 <span className="subArrow" onClick={() => onToggle(id)}></span>

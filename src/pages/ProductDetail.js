@@ -1,9 +1,12 @@
-import React from 'react';
+import '../styles/productDetail.scss';
+import ProductInfo from './ProductInfo';
+import ProductSideBar from './ProductSideBar';
 
 function ProductDetail() {
   return (
-    <div>
-      <h2>상세페이지</h2>
+    <div className="prdDetailWrapper">
+      <ProductInfo />
+      <ProductSideBar />
     </div>
   );
 }

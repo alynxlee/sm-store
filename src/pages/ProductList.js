@@ -1,53 +1,36 @@
 import '../styles/productList.scss';
 
-import data from '../assets/DB/ListData.json';
-import { Link } from 'react-router-dom';
+import { setProductAll } from '../assets';
+import ProductSwiper from './ProductSwiper';
+import Category from '../components/Category';
+import ProductItem from './ProductItem';
 
 function ProductList() {
-  const path = process.env.PUBLIC_URL;
+  const ProductAll = setProductAll();
   return (
-    <div className="productListContainer">
-      <div className="productList">
-        <div className="sortWrapper">
-          <select name="sort" className="sort">
-            <option value="recent">최신순</option>
-            <option value="name">상품명</option>
-            <option value="low">낮은가격</option>
-            <option value="high">높은가격</option>
-          </select>
-        </div>
-        <div>
-          <ul className="productListWrap">
-            {data.ProductAll.map(item => {
-              const { id, img, celeb, title, price, dcPrice, dcRate } = item;
-              return (
-                <li key={id} className="productListItem">
-                  <Link>
-                    <img src={path + `/images/${img}`} alt={`${celeb} + ${title}`} />
-                  </Link>
-                  <Link>
-                    <ul className="titleWrapper">
-                      <li>{celeb}</li>
-                      <li>{title}</li>
-                    </ul>
-                  </Link>
-                  <ul className="priceWrapper">
-                    <li>
-                      <span>{dcPrice}</span>
-                      <span>{price}</span>
-                    </li>
-                    <li>{dcRate}</li>
-                  </ul>
-                  <Link>
-                    <div className="cartIcon">cart</div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+    <div className="product">
+      <ProductSwiper />
+      <div className="listWrapper">
+        <Category />
+        <div className="productListContainer">
+          <div className="productList">
+            <div className="sortWrapper">
+              <select name="sort" className="sort">
+                <option value="recent">최신순</option>
+                <option value="name">상품명</option>
+                <option value="low">낮은가격</option>
+                <option value="high">높은가격</option>
+              </select>
+            </div>
+            <ul className="productListWrap">
+              {ProductAll.map(item => (
+                <ProductItem key={item.id} item={item} />
+              ))}
+            </ul>
+          </div>
+          <div className="productMore">더보기 +</div>
         </div>
       </div>
-      <div className="productMore">더보기 +</div>
     </div>
   );
 }

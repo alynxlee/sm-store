@@ -8,16 +8,17 @@ import Footer from './components/Footer';
 import Go from './components/Go';
 
 // pages
-import Product from './pages/Product';
-
-// style
-import './assets/styles/style.scss';
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Mypage from './pages/Mypage';
 import Search from './pages/Search';
 import Cart from './pages/Cart';
 import Collection from './pages/Collection';
+import ProductList from './pages/ProductList';
+import ProductDetail from './pages/ProductDetail';
+
+// style
+import './assets/styles/style.scss';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/">
-              <Route index element={<Product />} />
+              <Route index element={<ProductList />} />
+              <Route path=":itemId" element={<ProductDetail />} />
             </Route>
             <Route path="login" element={<Login />} />
             <Route path="join" element={<Join />} />

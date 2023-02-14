@@ -10,7 +10,6 @@ import 'swiper/css/autoplay';
 import swiperData from '../assets/DB/SwiperData';
 
 // style
-import '../styles/productSwiper.scss';
 
 function ProductSwiper() {
   const path = process.env.PUBLIC_URL;
