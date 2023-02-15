@@ -9,7 +9,7 @@ body {
           position: relative;
           height: 840px;
           &::before {
-            content: '';
+            content: "";
             width: 1200px;
             height: 100%;
             background-color: #f2f2f2;
@@ -79,7 +79,8 @@ body {
           .share {
             width: 20px;
             height: 20px;
-            background: url(../assets/images/detailSns.png) no-repeat 50% / contain;
+            background: url(../assets/images/detailSns.png) no-repeat 50% /
+              contain;
             text-indent: -9999px;
           }
         }
@@ -105,7 +106,8 @@ body {
             vertical-align: middle;
             width: 12px;
             height: 6px;
-            background: url(../assets/images/detail-arrow-down.png) no-repeat 50% / contain;
+            background: url(../assets/images/detail-arrow-down.png) no-repeat
+              50% / contain;
             text-indent: -9999px;
           }
         }
@@ -165,12 +167,12 @@ body {
                 text-indent: -9999px;
                 cursor: pointer;
                 &.minus {
-                  background: url(../assets/images/detail-quantity-small-down-off.png) no-repeat 50% /
-                    contain;
+                  background: url(../assets/images/detail-quantity-small-down-off.png)
+                    no-repeat 50% / contain;
                 }
                 &.plus {
-                  background: url(../assets/images/detail-quantity-small-up-off.png) no-repeat 50% /
-                    contain;
+                  background: url(../assets/images/detail-quantity-small-up-off.png)
+                    no-repeat 50% / contain;
                 }
               }
             }
@@ -253,7 +255,8 @@ body {
         .close {
           width: 17px;
           height: 17px;
-          background: url(../assets/images/popup-close-icon.png) no-repeat 50% / contain;
+          background: url(../assets/images/popup-close-icon.png) no-repeat 50% /
+            contain;
           cursor: pointer;
         }
       }
@@ -261,6 +264,65 @@ body {
         padding: 100px 20px 0;
         text-align: center;
         background: url(../assets/images/popup-wish-icon.png) no-repeat 50% 40px;
+      }
+      .actionBtn {
+        margin: 50px auto 40px;
+        text-align: center;
+
+        button {
+          border: none;
+          width: 160px;
+          height: 50px;
+          color: #2d2f43;
+          border-radius: 50px;
+          font-size: 16px;
+
+          &.keep {
+            border: 1px solid #b4b5c1;
+            background-color: #fff;
+            margin-right: 10px;
+          }
+          &.goWish {
+            background-color: #3d435f;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .cartPopup {
+      width: 412px;
+      height: 356px;
+      background-color: #fff;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      /* z-index: 9999; */
+      border: 1px solid #3d435f;
+      border-radius: 5px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 25px 20px 40px;
+        color: #fff;
+        background: #3d435f;
+        .close {
+          width: 17px;
+          height: 17px;
+          background: url(../assets/images/popup-close-icon.png) no-repeat 50% /
+            contain;
+          cursor: pointer;
+        }
+      }
+      .content {
+        margin-top: 10px;
+        padding: 100px 20px 0;
+        text-align: center;
+        background: url(../assets/images/popup-cart-icon.png) no-repeat 50% 40px;
+        p {
+          margin-top: 10px;
+        }
       }
       .actionBtn {
         margin: 50px auto 40px;

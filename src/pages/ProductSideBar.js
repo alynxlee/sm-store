@@ -1,47 +1,57 @@
-import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { getAllId, getPrdDes, addWishList } from '../assets';
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { getAllId, getPrdDes, addWishList } from "../assets";
 
 function ProductSideBar() {
   const { itemId } = useParams();
   const item = getAllId(itemId);
   const itemDes = getPrdDes(itemId);
   const { celeb, title, costPrice, dcRate } = item;
-  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const [count, setCount] = useState(1);
   const onDecrease = () => {
     if (count > 1) {
-      setCount(prevCount => prevCount - 1);
+      setCount((prevCount) => prevCount - 1);
     }
   };
   const onIncrease = () => {
     if (count < 5) {
-      setCount(prevCount => prevCount + 1);
+      setCount((prevCount) => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
   };
 
   const countPrice = item.price * count;
-  const totalPrice = countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const totalPrice = countPrice
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const { des } = itemDes;
-  const filterDes = des.filter(el => el !== null);
+  const filterDes = des.filter((el) => el !== null);
 
   let saveMoney = item.price * 0.005;
 
-  const [showPopup, setShowPopup] = useState(false);
-  const openPopup = () => {
-    setShowPopup(!showPopup);
+  const [showWishPop, setShowWishPop] = useState(false);
+  const openWishPop = () => {
+    setShowWishPop(!showWishPop);
+  };
+
+  const [showCartPop, setShowCartPop] = useState(false);
+  const openCartPop = () => {
+    setShowCartPop(!showCartPop);
   };
 
   const navigate = useNavigate();
   const handleWishList = () => {
     addWishList(item.id);
-    navigate('/wishlist');
+    navigate("/wishlist");
   };
 
+  const handleCart = () => {
+    navigate("/cart");
+  };
   return (
     <>
       <div className="prdSbWrapper">
@@ -78,7 +88,7 @@ function ProductSideBar() {
             </div>
           </div>
           <ul className="des">
-            {filterDes.map(el => {
+            {filterDes.map((el) => {
               return <li key={el.idx}>{el}</li>;
             })}
           </ul>
@@ -108,8 +118,10 @@ function ProductSideBar() {
           <div className="btnWrapper">
             <button className="orderNow">바로 구매하기</button>
             <div>
-              <button className="inCart">장바구니 담기</button>
-              <button className="inWish" onClick={openPopup}>
+              <button className="inCart" onClick={openCartPop}>
+                장바구니 담기
+              </button>
+              <button className="inWish" onClick={openWishPop}>
                 위시리스트 담기
               </button>
             </div>
@@ -122,11 +134,12 @@ function ProductSideBar() {
           </div>
         </section>
       </div>
-      {showPopup ? (
+      {/* 위시리스트 담기 */}
+      {showWishPop ? (
         <div className="wishPopup">
           <div className="header">
             <h3>관심상품 담기</h3>
-            <div className="close" onClick={openPopup}></div>
+            <div className="close" onClick={openWishPop}></div>
           </div>
           <div className="content">
             <p>
@@ -135,11 +148,31 @@ function ProductSideBar() {
             </p>
           </div>
           <div className="actionBtn">
-            <button className="keep" onClick={openPopup}>
+            <button className="keep" onClick={openWishPop}>
               쇼핑 계속하기
             </button>
             <button className="goWish" onClick={handleWishList}>
               관심상품 확인
+            </button>
+          </div>
+        </div>
+      ) : null}
+      {/* 장바구니 담기 */}
+      {showCartPop ? (
+        <div className="cartPopup">
+          <div className="header">
+            <h3>장바구니 담기</h3>
+            <div className="close" onClick={openCartPop}></div>
+          </div>
+          <div className="content">
+            <p>장바구니에 상품이 정상적으로 담겼습니다.</p>
+          </div>
+          <div className="actionBtn">
+            <button className="keep" onClick={openCartPop}>
+              쇼핑 계속하기
+            </button>
+            <button className="goWish" onClick={handleCart}>
+              장바구니 이동
             </button>
           </div>
         </div>

@@ -1,0 +1,87 @@
+body {
+  .cartWrapper {
+    h2 {
+      font-size: 41px;
+      font-weight: 700;
+      text-align: center;
+      padding: 30px 0 50px;
+    }
+    table {
+      width: 100%;
+      margin: 10px 0;
+
+      input {
+        width: 24px;
+        height: 24px;
+        border: 0;
+        appearance: none;
+        vertical-align: middle;
+        background: url(../images/login-check-medium-off.png) no-repeat 0 center;
+        &:checked {
+          background: url(../images/login-check-medium-on.png) no-repeat 0
+            center;
+        }
+      }
+      thead {
+        tr {
+          line-height: 1.5;
+          th {
+            padding: 11px 0 10px;
+            line-height: 60px;
+            height: 60px;
+            font-size: 14px;
+            color: #98989f;
+          }
+        }
+      }
+      tbody {
+        text-align: center;
+        tr {
+          td {
+            color: #353535;
+            border-top: 1px #d7d5d5 solid;
+            padding: 25px 10px;
+            font-size: 14px;
+            line-height: 24px;
+            &.productImg {
+              a {
+                img {
+                  width: 120px;
+                  vertical-align: middle;
+                }
+              }
+            }
+            &.productTitle {
+              text-align: left;
+            }
+            &.quantity {
+              .quanWrapper {
+                display: flex;
+                justify-content: space-between;
+
+                text-align: center;
+                width: 78px;
+              }
+            }
+            &.select {
+              display: flex;
+              flex-direction: column;
+              margin: 0 auto;
+              button {
+                border: 1px solid #b4b5c1;
+                outline: none;
+                background-color: #fff;
+                height: 30px;
+                line-height: 30px;
+                width: 100px;
+                border-radius: 50px;
+                display: block;
+                margin: 4px auto 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

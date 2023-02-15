@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 function ProductItem({ item }) {
-  const { id, img, celeb, title, price, costPrice, dcRate } = item;
+  const { id, img, celeb, title, costPrice, dcRate } = item;
+  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const path = process.env.PUBLIC_URL;
   return (
     <>
@@ -17,7 +18,7 @@ function ProductItem({ item }) {
         </Link>
         <ul className="priceWrapper">
           <li>
-            <span>{price}</span>
+            <span>₩ {price}</span>
             <span className="costPrice">{costPrice}</span>
           </li>
           <li>{dcRate}</li>
