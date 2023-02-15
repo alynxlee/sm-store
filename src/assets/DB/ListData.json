@@ -5,21 +5,21 @@
       "img": "magazineKAI1.jpg",
       "celeb": "[magazine] KAI",
       "title": "Marie Claire 2023-03 B",
-      "price": "₩ 8,000"
+      "price": "8000"
     },
     {
       "id": "2",
       "img": "magazineBaekhyun3.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 E",
-      "price": "₩ 9,000"
+      "price": "9000"
     },
     {
       "id": "3",
       "img": "product1.jpg",
       "celeb": "YESUNG",
       "title": "The 1st Album - 'Floral Sense'(Special Ver.)",
-      "price": "₩ 19,300",
+      "price": "19300",
       "costPrice": "₩ 23,800",
       "dcRate": "19%"
     },
@@ -28,21 +28,21 @@
       "img": "product2.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 C",
-      "price": "₩ 9,000"
+      "price": "9000"
     },
     {
       "id": "5",
       "img": "product3.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 B",
-      "price": "₩ 9,000"
+      "price": "9000"
     },
     {
       "id": "6",
       "img": "keyKillerCrt.jpg",
       "celeb": "[UNBOXING EVENT] KEY",
       "title": "The 2nd Album Repackage - 'Killer' (CRT Ver.)",
-      "price": "₩ 17,800",
+      "price": "17800",
       "costPrice": "₩ 22,000",
       "dcRate": "19%"
     },
@@ -52,7 +52,7 @@
       "img": "keyKillerZine.jpg",
       "celeb": "[UNBOXING EVENT] KEY",
       "title": "The 2nd Album Repackage - 'Killer' (Zine Ver.)",
-      "price": "₩ 17,800",
+      "price": "17800",
       "costPrice": "₩ 22,000",
       "dcRate": "19%"
     },
@@ -61,21 +61,21 @@
       "img": "product4.jpg",
       "celeb": "[magazine] SUNGCHAN",
       "title": "ATSTAR1 2023-03",
-      "price": "₩ 5,900"
+      "price": "5900"
     },
     {
       "id": "9",
       "img": "product5.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "FORTUNE SCRATCH SET (RANDOM)",
-      "price": "₩ 3,000"
+      "price": "3000"
     },
     {
       "id": "10",
       "img": "product6.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "ID CARD + FANLIGHT DECO STICKER SET",
-      "price": "₩ 11,000"
+      "price": "11000"
     },
 
     {
@@ -83,56 +83,56 @@
       "img": "product8.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "POSTCARD SET",
-      "price": "₩ 12,000"
+      "price": "12000"
     },
     {
       "id": "12",
       "img": "product9.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "ACRYLIC STAND SET",
-      "price": "₩ 19,000"
+      "price": "19000"
     },
     {
       "id": "13",
       "img": "product10.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "NAME TAG",
-      "price": "₩ 15,000"
+      "price": "15000"
     },
     {
       "id": "14",
       "img": "product11.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "SWEATSHIRT [Little Friends Ver.]",
-      "price": "₩ 58,000"
+      "price": "58000"
     },
     {
       "id": "15",
       "img": "product12.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "RING",
-      "price": "₩ 28,000"
+      "price": "28000"
     },
     {
       "id": "16",
       "img": "product13.jpg",
       "celeb": "NCT 127",
       "title": "RANDOM TRADING CARD SET A ver. - Ay-Yo",
-      "price": "₩ 5,000"
+      "price": "5000"
     },
     {
       "id": "17",
       "img": "product14.jpg",
       "celeb": "NCT 127",
       "title": "POSTCARD + HOLOGRAM PHOTO CARD SET - Ay-Yo",
-      "price": "₩ 8,000"
+      "price": "8000"
     },
     {
       "id": "18",
       "img": "product15.jpg",
       "celeb": "NCT 127",
       "title": "4X6 PHOTO SET - Ay-Yo",
-      "price": "₩ 7,000"
+      "price": "7000"
     }
   ]
 }

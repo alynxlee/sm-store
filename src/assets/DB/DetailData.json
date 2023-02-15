@@ -44,11 +44,7 @@
     {
       "id": "9",
       "mainImg": "product5Main.jpg",
-      "detail": [
-        "product5Detail1.jpg",
-        "product5Detail2.jpg",
-        "product5Detail3.jpg"
-      ]
+      "detail": ["product5Detail1.jpg", "product5Detail2.jpg", "product5Detail3.jpg"]
     },
     {
       "id": "10",
@@ -160,13 +156,7 @@
         "*2/27 ~ 3/10 이내에 배송 시작될 예정입니다.",
         " ",
         "💙구매 안내사항",
-        "*예성 정규 1집 'Floral Sense' (Special Ver.) 앨범끼리만 구매가 가능합니다.",
-        " ",
-        "💙쿠폰 안내사항",
-        "- 2,000원 할인쿠폰은 예성 정규 1집 SPECIAL Ver. 구매 시에만 사용 가능합니다.",
-        "- 쿠폰 사용 : 버전 무관 1개만 사용 가능(ID당 최대 1개)",
-        "- 쿠폰 다운로드 기간 : ~ 2/26(일) 00:00 (KST)",
-        "- 쿠폰 유효 기간 : ~3/9(목) 00:00 (KST)"
+        "*예성 정규 1집 'Floral Sense' (Special Ver.) 앨범끼리만 구매가 가능합니다."
       ]
     },
     {
