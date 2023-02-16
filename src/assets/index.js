@@ -1,7 +1,7 @@
-import infoData from './DB/DetailData.json';
-import prdListAll from './DB/ListData.json';
-import prdSidebar from './DB/DetailData.json';
-import WishList from '../pages/WishList';
+import infoData from "./DB/DetailData.json";
+import prdListAll from "./DB/ListData.json";
+import prdSidebar from "./DB/DetailData.json";
+import WishList from "../pages/WishList";
 
 const { PrdAllInfo } = infoData;
 const { ProductAll } = prdListAll;
@@ -20,20 +20,20 @@ export function setSideBarDes() {
 }
 
 export function getItemId(itemId) {
-  return PrdAllInfo.find(prdInfo => prdInfo.id === itemId);
+  return PrdAllInfo.find((prdInfo) => prdInfo.id === itemId);
 }
 
 export function getAllId(itemId) {
-  return ProductAll.find(prdAll => prdAll.id === itemId);
+  return ProductAll.find((prdAll) => prdAll.id === itemId);
 }
 
 export function getPrdDes(itemId) {
-  return SideBarDes.find(sidebar => sidebar.id === itemId);
+  return SideBarDes.find((sidebar) => sidebar.id === itemId);
 }
 
 // 위시리스트
-const WISHLIST_KEY = 'SMSTORE 위시리스트';
-const wishlist = JSON.parse(localStorage.getItem(WISHLIST_KEY) || '{}');
+const WISHLIST_KEY = "SMSTORE 위시리스트";
+const wishlist = JSON.parse(localStorage.getItem(WISHLIST_KEY) || "{}");
 
 export function addWishList(itemId) {
   wishlist[itemId] = ProductAll[itemId].title;
@@ -45,20 +45,5 @@ export function delWishList(itemId) {
 }
 
 export function getWishlist() {
-  return ProductAll.filter(item => wishlist[item.id]);
+  return ProductAll.filter((item) => wishlist[item.id]);
 }
-
-// // 장바구니
-// const CART_KEY = 'SMSTORE 장바구니';
-// const cart = JSON.parse(localStorage.getItem(CART_KEY) || '{}');
-
-// export function addCart(itemId) {
-//   cart[itemId] = ProductAll[itemId].title;
-//   cart[itemId] = ProductAll[itemId].id;
-//   cart[itemId] = ProductAll[itemId].celeb;
-//   cart[itemId] = ProductAll[itemId].img;
-//   cart[itemId] = ProductAll[itemId].price;
-//   cart[itemId] = ProductAll[itemId].qty;
-//   cart[itemId] = ProductAll[itemId].costPrice;
-//   localStorage.setItem(CART_KEY, JSON.stringify(cart));
-// }

@@ -1,60 +1,63 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { getAllId, getPrdDes, addWishList } from '../assets';
-import { addCart } from '../store/actions';
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getAllId, getPrdDes, addWishList } from "../assets";
+import { addItem } from "../store/cartItemSlice";
 
 function ProductSideBar() {
-  const dispatch = useDispatch();
-  const cart = useSelector(store => store.cartReducer);
+  // 액션 처리
+  let dispatch = useDispatch();
+  // 상태값 처리
+  const product = useSelector((state) => state.cartItem);
+
   const { itemId } = useParams();
   const item = getAllId(itemId);
   const itemDes = getPrdDes(itemId);
   const { celeb, title, costPrice, dcRate, qty } = item;
-  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const [count, setCount] = useState(qty);
   const onDecrease = () => {
     if (count > 1) {
-      setCount(prevCount => prevCount - 1);
+      setCount((prevCount) => prevCount - 1);
     }
   };
   const onIncrease = () => {
     if (count < 5) {
-      setCount(prevCount => prevCount + 1);
+      setCount((prevCount) => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
   };
 
   const countPrice = item.price * count;
-  const totalPrice = countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const totalPrice = countPrice
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const { des } = itemDes;
-  const filterDes = des.filter(el => el !== null);
+  const filterDes = des.filter((el) => el !== null);
 
   let saveMoney = item.price * 0.005;
 
   const [showWishPop, setShowWishPop] = useState(false);
   const openWishPop = () => {
     setShowWishPop(!showWishPop);
-    // dispatch(addCart(product));
   };
 
   const [showCartPop, setShowCartPop] = useState(false);
   const openCartPop = () => {
     setShowCartPop(!showCartPop);
-    dispatch({ type: 'addItem' });
   };
 
   const navigate = useNavigate();
   const handleWishList = () => {
     addWishList(item.id);
-    navigate('/wishlist');
+    navigate("/wishlist");
   };
 
   const handleCart = () => {
-    navigate('/cart');
+    navigate("/cart");
   };
   return (
     <>
@@ -92,7 +95,7 @@ function ProductSideBar() {
             </div>
           </div>
           <ul className="des">
-            {filterDes.map(el => {
+            {filterDes.map((el) => {
               return <li key={el.idx}>{el}</li>;
             })}
           </ul>
@@ -122,7 +125,13 @@ function ProductSideBar() {
           <div className="btnWrapper">
             <button className="orderNow">바로 구매하기</button>
             <div>
-              <button className="inCart" onClick={openCartPop}>
+              <button
+                className="inCart"
+                onClick={() => {
+                  setShowCartPop(!showCartPop);
+                  dispatch(addItem(product));
+                }}
+              >
                 장바구니 담기
               </button>
               <button className="inWish" onClick={openWishPop}>
