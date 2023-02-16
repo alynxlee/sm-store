@@ -44,6 +44,21 @@ export function delWishList(itemId) {
   localStorage.setItem(WISHLIST_KEY, JSON.stringify(wishlist));
 }
 
-export function goWishlist() {
+export function getWishlist() {
   return ProductAll.filter(item => wishlist[item.id]);
 }
+
+// // 장바구니
+// const CART_KEY = 'SMSTORE 장바구니';
+// const cart = JSON.parse(localStorage.getItem(CART_KEY) || '{}');
+
+// export function addCart(itemId) {
+//   cart[itemId] = ProductAll[itemId].title;
+//   cart[itemId] = ProductAll[itemId].id;
+//   cart[itemId] = ProductAll[itemId].celeb;
+//   cart[itemId] = ProductAll[itemId].img;
+//   cart[itemId] = ProductAll[itemId].price;
+//   cart[itemId] = ProductAll[itemId].qty;
+//   cart[itemId] = ProductAll[itemId].costPrice;
+//   localStorage.setItem(CART_KEY, JSON.stringify(cart));
+// }
