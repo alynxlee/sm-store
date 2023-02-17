@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sm-store/static/css/main.f469b210.css",
-    "main.js": "/sm-store/static/js/main.65990007.js",
+    "main.css": "/sm-store/static/css/main.3999fb0e.css",
+    "main.js": "/sm-store/static/js/main.12c5026a.js",
     "static/media/logo.svg": "/sm-store/static/media/logo.19194b6b5a08de5bd5e5.svg",
     "static/media/CIRCLE_homever.png": "/sm-store/static/media/CIRCLE_homever.0aa53340f9a906c16cb9.png",
     "static/media/footerSMLogo.svg": "/sm-store/static/media/footerSMLogo.7117605db6fb2276ea4e2ef0d23f7a25.svg",
@@ -18,11 +18,11 @@
     "static/media/footerYoutube.svg": "/sm-store/static/media/footerYoutube.4d5fa656b97f3d95a4c59b1de6b618ce.svg",
     "static/media/footerFacebook.svg": "/sm-store/static/media/footerFacebook.596e159109645a1b76113783808e8ef2.svg",
     "index.html": "/sm-store/index.html",
-    "main.f469b210.css.map": "/sm-store/static/css/main.f469b210.css.map",
-    "main.65990007.js.map": "/sm-store/static/js/main.65990007.js.map"
+    "main.3999fb0e.css.map": "/sm-store/static/css/main.3999fb0e.css.map",
+    "main.12c5026a.js.map": "/sm-store/static/js/main.12c5026a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f469b210.css",
-    "static/js/main.65990007.js"
+    "static/css/main.3999fb0e.css",
+    "static/js/main.12c5026a.js"
   ]
 }
