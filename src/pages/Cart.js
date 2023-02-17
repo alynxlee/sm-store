@@ -1,55 +1,33 @@
 // import { useSelector, useDispatch } from 'react-redux';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { delCart, getAllId, getCart } from '../assets';
-import '../assets/styles/cart.scss';
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getCart } from "../assets";
+import "../assets/styles/cart.scss";
 
 function Cart() {
   const path = process.env.PUBLIC_URL;
   const [product, setProduct] = useState([]);
-  const [count, setCount] = useState(1);
-  const { itemId } = useParams();
-  const getItem = getAllId(itemId);
 
-  // const handleDelete = () => {
-  //   delCart(getItem.id);
-  // };
+  const { itemId } = useParams();
+  // const getItem = getAllId(itemId);
+  // const prdDataArr =
+  // console.log(prdDataArr);
 
   useEffect(() => {
-    const nextProduct = getCart();
+    const nextProduct = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
     setProduct(nextProduct);
   }, []);
 
-  // const onDecrease = id => {
-  //   if (count > 1) {
-  //     setCount(prevCount => {
-  //       return getItem === prevCount.id ? prevCount - 1 : prevCount;
-  //     });
-  //   }
-  // };
-  const onDecrease = useCallback(id => {
-    setProduct(product => {
-      return product.filter(one => one.id !== id);
-    });
-    //   if (productId === product.id && product.count > 1) {
-    //     return { ...product, count: product.count - 1 };
-    //   } else return product;
-    // });
-    // setProduct(delQty);
-  }, []);
-  // const delCart = useCallback(id => {
-  //   setProduct(product => {
-  //     return product.filter(one => one.id !== id);
-  //   });
-  // }, []);
-
-  // const removeAll = useCallback(id => {
-  //   setProduct([]);
-  // }, []);
-
+  const [count, setCount] = useState(1);
+  const onDecrease = () => {
+    const prdDecrease = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+    for (let i = 0; i < prdDecrease.length; i++) {
+      prdDecrease[i].count = count - 1;
+    }
+  };
   const onIncrease = () => {
     if (count < 5) {
-      setCount(prevCount => prevCount + 1);
+      setCount((prevCount) => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
@@ -75,22 +53,22 @@ function Cart() {
             </tr>
           </thead>
           <tbody>
-            {product.map((item, i) => {
-              const { id, img, celeb, title, dcRate, count } = item;
-              const countPrice = item.price * count;
-              const totalPrice = countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            {product.map((item) => {
+              const { id, img, celeb, title, dcRate, count, price } = item;
+              const countPrice = Number(price) * Number(count);
+
               return (
                 <tr key={id}>
                   <td>
                     <input type="checkbox"></input>
                   </td>
                   <td className="productImg">
-                    <Link>
+                    <Link to={`/${id}`}>
                       <img src={path + `/images/${img}`} alt={title} />
                     </Link>
                   </td>
                   <td className="productTitle">
-                    <Link>
+                    <Link to={`/${id}`}>
                       <em>{celeb}</em>
                       <span>{title}</span>
                     </Link>
@@ -115,7 +93,7 @@ function Cart() {
                     <div>
                       <span>{dcRate}</span>
                     </div>
-                    <span>₩ {countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+                    <span>₩ {countPrice}</span>
                   </td>
                   <td className="select">
                     <button>주문하기</button>
@@ -129,7 +107,7 @@ function Cart() {
           </tbody>
         </table>
       )}
-      <button onClick={delCart}>전체 삭제</button>
+      <button>전체 삭제</button>
     </div>
   );
 }

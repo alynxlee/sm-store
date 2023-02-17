@@ -1,42 +1,84 @@
-import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { getAllId, getPrdDes, addWishList, addCart } from '../assets';
-// import { addItem } from '../store/cartItemSlice';
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { getAllId, getPrdDes, addWishList, addCart } from "../assets";
 
 function ProductSideBar() {
-  // 액션 처리
-  // let dispatch = useDispatch();
-  // 상태값 처리
-  // const product = useSelector(state => state.cartItem);
-
   const { itemId } = useParams();
   const item = getAllId(itemId);
   const itemDes = getPrdDes(itemId);
-  const { celeb, title, costPrice, dcRate } = item;
-  const price = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const { id, img, celeb, title, costPrice, dcRate } = item;
+  const price = item.price;
+  // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const [count, setCount] = useState(1);
+  // 상품 수량 감소
   const onDecrease = () => {
     if (count > 1) {
-      setCount(prevCount => prevCount - 1);
+      setCount((prevCount) => prevCount - 1);
     }
   };
+  // 상품 수량 증가
   const onIncrease = () => {
     if (count < 5) {
-      setCount(prevCount => prevCount + 1);
+      setCount((prevCount) => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
   };
 
+  // 상품 수량 * 가격
   const countPrice = item.price * count;
-  const totalPrice = countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  // 숫자 세자리마다 콤마
+  const totalPrice = countPrice;
+  // .toString()
+  // .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const { des } = itemDes;
-  const filterDes = des.filter(el => el !== null);
+  const filterDes = des.filter((el) => el !== null);
 
   let saveMoney = item.price * 0.005;
+
+  // localstorage에 데이터 추가
+  // const [cart, setCart] = useState([]);
+  // const CART_KEY = "SMSTORE 장바구니";
+  // const cartKey = JSON.parse(localStorage.getItem(CART_KEY) || "{}");
+
+  const addCartItem = () => {
+    let prdDataArr = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+    if (prdDataArr == null) {
+      prdDataArr = [
+        {
+          id: id,
+          img: img,
+          celeb: celeb,
+          title: title,
+          price: price,
+          dcRate: dcRate,
+          count: count,
+        },
+      ];
+    } else {
+      prdDataArr = [
+        ...prdDataArr,
+        {
+          id: id,
+          img: img,
+          celeb: celeb,
+          title: title,
+          price: price,
+          dcRate: dcRate,
+          count: count,
+        },
+      ];
+    } // else {
+    //   prdDataArr = JSON.parse(prdDataArr);
+    // }
+    // prdDataArr.push(itemId);
+    // prdDataArr = new Set(prdDataArr);
+    // prdDataArr = [...prdDataArr];
+    localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
+    setShowCartPop(!showCartPop);
+  };
 
   const [showWishPop, setShowWishPop] = useState(false);
   const openWishPop = () => {
@@ -50,12 +92,13 @@ function ProductSideBar() {
 
   const navigate = useNavigate();
   const handleWishList = () => {
-    navigate('/wishlist');
+    navigate("/wishlist");
   };
 
   const handleCart = () => {
-    navigate('/cart');
+    navigate("/cart");
   };
+
   return (
     <>
       <div className="prdSbWrapper">
@@ -92,7 +135,7 @@ function ProductSideBar() {
             </div>
           </div>
           <ul className="des">
-            {filterDes.map(el => {
+            {filterDes.map((el) => {
               return <li key={el.idx}>{el}</li>;
             })}
           </ul>
@@ -122,12 +165,7 @@ function ProductSideBar() {
           <div className="btnWrapper">
             <button className="orderNow">바로 구매하기</button>
             <div>
-              <button
-                className="inCart"
-                onClick={() => {
-                  addCart(item.id);
-                  setShowCartPop(!showCartPop);
-                }}>
+              <button className="inCart" onClick={addCartItem}>
                 장바구니 담기
               </button>
               <button
@@ -135,7 +173,8 @@ function ProductSideBar() {
                 onClick={() => {
                   addWishList(item.id);
                   setShowWishPop(!showWishPop);
-                }}>
+                }}
+              >
                 위시리스트 담기
               </button>
             </div>

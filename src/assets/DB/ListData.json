@@ -5,7 +5,7 @@
       "img": "magazineKAI1.jpg",
       "celeb": "[magazine] KAI",
       "title": "Marie Claire 2023-03 B",
-      "price": "8000",
+      "price": 8000,
       "count": 1
     },
     {
@@ -13,7 +13,7 @@
       "img": "magazineBaekhyun3.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 E",
-      "price": "9000",
+      "price": 9000,
       "count": 1
     },
     {
@@ -21,7 +21,7 @@
       "img": "product1.jpg",
       "celeb": "YESUNG",
       "title": "The 1st Album - 'Floral Sense'(Special Ver.)",
-      "price": "19300",
+      "price": 19300,
       "costPrice": "₩ 23,800",
       "dcRate": "19%",
       "count": 1
@@ -31,7 +31,7 @@
       "img": "product2.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 C",
-      "price": "9000",
+      "price": 9000,
       "count": 1
     },
     {
@@ -39,7 +39,7 @@
       "img": "product3.jpg",
       "celeb": "[magazine] BAEKHYUN",
       "title": "W Korea Vol.3 2023-03 B",
-      "price": "9000",
+      "price": 9000,
       "count": 1
     },
     {
@@ -47,7 +47,7 @@
       "img": "keyKillerCrt.jpg",
       "celeb": "[UNBOXING EVENT] KEY",
       "title": "The 2nd Album Repackage - 'Killer' (CRT Ver.)",
-      "price": "17800",
+      "price": 17800,
       "costPrice": "₩ 22,000",
       "dcRate": "19%",
       "count": 1
@@ -58,7 +58,7 @@
       "img": "keyKillerZine.jpg",
       "celeb": "[UNBOXING EVENT] KEY",
       "title": "The 2nd Album Repackage - 'Killer' (Zine Ver.)",
-      "price": "17800",
+      "price": 17800,
       "costPrice": "₩ 22,000",
       "dcRate": "19%",
       "count": 1
@@ -68,7 +68,7 @@
       "img": "product4.jpg",
       "celeb": "[magazine] SUNGCHAN",
       "title": "ATSTAR1 2023-03",
-      "price": "5900",
+      "price": 5900,
       "count": 1
     },
     {
@@ -76,7 +76,7 @@
       "img": "product5.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "FORTUNE SCRATCH SET (RANDOM)",
-      "price": "3000",
+      "price": 3000,
       "count": 1
     },
     {
@@ -84,7 +84,7 @@
       "img": "product6.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "ID CARD + FANLIGHT DECO STICKER SET",
-      "price": "11000",
+      "price": 11000,
       "count": 1
     },
 
@@ -93,7 +93,7 @@
       "img": "product8.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "POSTCARD SET",
-      "price": "12000",
+      "price": 12000,
       "count": 1
     },
     {
@@ -101,7 +101,7 @@
       "img": "product9.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "ACRYLIC STAND SET",
-      "price": "19000",
+      "price": 19000,
       "count": 1
     },
     {
@@ -109,7 +109,7 @@
       "img": "product10.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "NAME TAG",
-      "price": "15000",
+      "price": 15000,
       "count": 1
     },
     {
@@ -117,7 +117,7 @@
       "img": "product11.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "SWEATSHIRT [Little Friends Ver.]",
-      "price": "58000",
+      "price": 58000,
       "count": 1
     },
     {
@@ -125,7 +125,7 @@
       "img": "product12.jpg",
       "celeb": "Beyond LIVE - 2023 WayV FANMEETING TOUR [Phantom]",
       "title": "RING",
-      "price": "28000",
+      "price": 28000,
       "count": 1
     },
     {
@@ -133,7 +133,7 @@
       "img": "product13.jpg",
       "celeb": "NCT 127",
       "title": "RANDOM TRADING CARD SET A ver. - Ay-Yo",
-      "price": "5000",
+      "price": 5000,
       "count": 1
     },
     {
@@ -141,7 +141,7 @@
       "img": "product14.jpg",
       "celeb": "NCT 127",
       "title": "POSTCARD + HOLOGRAM PHOTO CARD SET - Ay-Yo",
-      "price": "8000",
+      "price": 8000,
       "count": 1
     },
     {
@@ -149,7 +149,7 @@
       "img": "product15.jpg",
       "celeb": "NCT 127",
       "title": "4X6 PHOTO SET - Ay-Yo",
-      "price": "7000",
+      "price": 7000,
       "count": 1
     }
   ]
