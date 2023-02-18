@@ -55,7 +55,7 @@ function Cart() {
           <tbody>
             {product.map((item) => {
               const { id, img, celeb, title, dcRate, count, price } = item;
-              const countPrice = Number(price) * Number(count);
+              const countPrice = price * count;
 
               return (
                 <tr key={id}>
@@ -93,7 +93,12 @@ function Cart() {
                     <div>
                       <span>{dcRate}</span>
                     </div>
-                    <span>₩ {countPrice}</span>
+                    <span>
+                      ₩{" "}
+                      {countPrice
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    </span>
                   </td>
                   <td className="select">
                     <button>주문하기</button>

@@ -29,9 +29,9 @@ function ProductSideBar() {
   // 상품 수량 * 가격
   const countPrice = item.price * count;
   // 숫자 세자리마다 콤마
-  const totalPrice = countPrice;
-  // .toString()
-  // .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const totalPrice = countPrice
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const { des } = itemDes;
   const filterDes = des.filter((el) => el !== null);
@@ -45,6 +45,7 @@ function ProductSideBar() {
 
   const addCartItem = () => {
     let prdDataArr = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+    let isExisting = prdDataArr.find((data) => data.id === itemId);
     if (prdDataArr == null) {
       prdDataArr = [
         {
@@ -57,6 +58,15 @@ function ProductSideBar() {
           count: count,
         },
       ];
+    } else if (isExisting) {
+      alert(
+        "장바구니에 동일한 상품이 있습니다. \n장바구니에 추가하시겠습니까?"
+      );
+      const newArr = prdDataArr.filter(
+        (arr, idx, callback) =>
+          idx === callback.findIndex((t) => t.id === arr.id)
+      );
+      prdDataArr = newArr;
     } else {
       prdDataArr = [
         ...prdDataArr,
@@ -109,7 +119,9 @@ function ProductSideBar() {
           </ul>
           <div className="priceWrapper">
             <ul className="priceContainer">
-              <li className="price">₩ {price}</li>
+              <li className="price">
+                ₩ {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </li>
               <li className="costPrice">{costPrice}</li>
               <li className="dcRate">{dcRate}</li>
             </ul>
