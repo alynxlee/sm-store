@@ -45,7 +45,6 @@ function ProductSideBar() {
 
   const addCartItem = () => {
     let prdDataArr = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
-    let isExisting = prdDataArr.find((data) => data.id === itemId);
     if (prdDataArr == null) {
       prdDataArr = [
         {
@@ -58,15 +57,33 @@ function ProductSideBar() {
           count: count,
         },
       ];
-    } else if (isExisting) {
+      localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
+    } else if (prdDataArr.find((data) => data.id === itemId)) {
       alert(
         "장바구니에 동일한 상품이 있습니다. \n장바구니에 추가하시겠습니까?"
       );
-      const newArr = prdDataArr.filter(
-        (arr, idx, callback) =>
-          idx === callback.findIndex((t) => t.id === arr.id)
-      );
-      prdDataArr = newArr;
+      prdDataArr = [
+        ...prdDataArr,
+        {
+          id: id,
+          img: img,
+          celeb: celeb,
+          title: title,
+          price: price,
+          dcRate: dcRate,
+          count: count,
+        },
+      ];
+      let newArr = [];
+
+      let idx = prdDataArr.findIndex((data) => data.id === itemId);
+
+      newArr[idx].count += prdDataArr[idx].count;
+
+      newArr.push(prdDataArr);
+
+      console.log(newArr);
+      localStorage.setItem("SMSTORE 장바구니", JSON.stringify(newArr));
     } else {
       prdDataArr = [
         ...prdDataArr,
@@ -80,6 +97,7 @@ function ProductSideBar() {
           count: count,
         },
       ];
+      localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
     } // else {
     //   prdDataArr = JSON.parse(prdDataArr);
     // }
