@@ -38,13 +38,11 @@ function ProductSideBar() {
 
   let saveMoney = item.price * 0.005;
 
+  const [order, setOrder] = useState([]);
   // localstorage에 데이터 추가
-  // const [cart, setCart] = useState([]);
-  // const CART_KEY = "SMSTORE 장바구니";
-  // const cartKey = JSON.parse(localStorage.getItem(CART_KEY) || "{}");
-
   const addCartItem = () => {
     let prdDataArr = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+    setOrder(prdDataArr);
     if (prdDataArr == null) {
       prdDataArr = [
         {
@@ -58,12 +56,12 @@ function ProductSideBar() {
         },
       ];
       localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
-    } else if (prdDataArr.find((data) => data.id === itemId)) {
+    } else if (prdDataArr.find((data) => data.id === id)) {
       alert(
         "장바구니에 동일한 상품이 있습니다. \n장바구니에 추가하시겠습니까?"
       );
-      prdDataArr = [
-        ...prdDataArr,
+
+      let newArr = [
         {
           id: id,
           img: img,
@@ -74,16 +72,14 @@ function ProductSideBar() {
           count: count,
         },
       ];
-      let newArr = [];
+      function findSameId() {
+        return prdDataArr.find((prdDataArr) => prdDataArr.id === id);
+      }
 
-      let idx = prdDataArr.findIndex((data) => data.id === itemId);
-
-      newArr[idx].count += prdDataArr[idx].count;
-
-      newArr.push(prdDataArr);
-
-      console.log(newArr);
-      localStorage.setItem("SMSTORE 장바구니", JSON.stringify(newArr));
+      let idx = newArr.findIndex(findSameId);
+      console.log(idx);
+      prdDataArr[idx].count = newArr[idx].count + prdDataArr[idx].count;
+      localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
     } else {
       prdDataArr = [
         ...prdDataArr,
@@ -98,13 +94,8 @@ function ProductSideBar() {
         },
       ];
       localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
-    } // else {
-    //   prdDataArr = JSON.parse(prdDataArr);
-    // }
-    // prdDataArr.push(itemId);
-    // prdDataArr = new Set(prdDataArr);
-    // prdDataArr = [...prdDataArr];
-    localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
+    }
+
     setShowCartPop(!showCartPop);
   };
 

@@ -1,36 +1,34 @@
-// import { useSelector, useDispatch } from 'react-redux';
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getCart } from "../assets";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../assets/styles/cart.scss";
 
 function Cart() {
   const path = process.env.PUBLIC_URL;
   const [product, setProduct] = useState([]);
 
-  const { itemId } = useParams();
-  // const getItem = getAllId(itemId);
-  // const prdDataArr =
-  // console.log(prdDataArr);
-
   useEffect(() => {
-    const nextProduct = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+    const nextProduct =
+      JSON.parse(localStorage.getItem("SMSTORE 장바구니")) || [];
     setProduct(nextProduct);
   }, []);
 
-  const [count, setCount] = useState(1);
-  const onDecrease = () => {
-    const prdDecrease = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
-    for (let i = 0; i < prdDecrease.length; i++) {
-      prdDecrease[i].count = count - 1;
-    }
-  };
+  const [count, setCount] = useState();
+  // const onDecrease = (el) => {
+  //   let prdDecrease = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
+  //   prdDecrease.find((data) => data.id === el.id);
+  //   let idx =
+  // };
   const onIncrease = () => {
     if (count < 5) {
       setCount((prevCount) => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
+  };
+
+  const delCartAll = () => {
+    localStorage.removeItem("SMSTORE 장바구니");
+    setProduct([]);
   };
 
   return (
@@ -75,9 +73,7 @@ function Cart() {
                   </td>
                   <td className="quantity">
                     <div className="quanWrapper">
-                      <button className="minus" onClick={onDecrease}>
-                        -
-                      </button>
+                      <button className="minus">-</button>
                       <span>{count}</span>
                       <button className="plus" onClick={onIncrease}>
                         +
@@ -112,7 +108,7 @@ function Cart() {
           </tbody>
         </table>
       )}
-      <button>전체 삭제</button>
+      <button onClick={delCartAll}>전체 삭제</button>
     </div>
   );
 }
