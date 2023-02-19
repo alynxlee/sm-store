@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getAllId, getPrdDes, addWishList, addCart } from "../assets";
+import { getAllId, getPrdDes, addWishList } from "../assets";
 
 function ProductSideBar() {
   const { itemId } = useParams();
@@ -8,7 +8,6 @@ function ProductSideBar() {
   const itemDes = getPrdDes(itemId);
   const { id, img, celeb, title, costPrice, dcRate } = item;
   const price = item.price;
-  // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const [count, setCount] = useState(1);
   // 상품 수량 감소
@@ -38,11 +37,14 @@ function ProductSideBar() {
 
   let saveMoney = item.price * 0.005;
 
-  const [order, setOrder] = useState([]);
   // localstorage에 데이터 추가
+  const [order, setOrder] = useState([]);
   const addCartItem = () => {
+    // 장바구니 key 이름: SMSTORE 장바구니
     let prdDataArr = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
     setOrder(prdDataArr);
+
+    // 처음 추가 시
     if (prdDataArr == null) {
       prdDataArr = [
         {
@@ -56,6 +58,8 @@ function ProductSideBar() {
         },
       ];
       localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
+
+      // 중복 id의 product가 있을 때
     } else if (prdDataArr.find((data) => data.id === id)) {
       alert(
         "장바구니에 동일한 상품이 있습니다. \n장바구니에 추가하시겠습니까?"
@@ -72,6 +76,8 @@ function ProductSideBar() {
           count: count,
         },
       ];
+
+      // 중복된 id의 count 추가
       function findSameId() {
         return prdDataArr.find((prdDataArr) => prdDataArr.id === id);
       }
@@ -80,6 +86,8 @@ function ProductSideBar() {
       console.log(idx);
       prdDataArr[idx].count = newArr[idx].count + prdDataArr[idx].count;
       localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
+
+      // 다른 제품 추가
     } else {
       prdDataArr = [
         ...prdDataArr,
@@ -96,19 +104,23 @@ function ProductSideBar() {
       localStorage.setItem("SMSTORE 장바구니", JSON.stringify(prdDataArr));
     }
 
+    // 장바구니 팝업창 열림
     setShowCartPop(!showCartPop);
   };
 
+  // 위시리스트 팝업창
   const [showWishPop, setShowWishPop] = useState(false);
   const openWishPop = () => {
     setShowWishPop(!showWishPop);
   };
 
+  // 장바구니 팝업창
   const [showCartPop, setShowCartPop] = useState(false);
   const openCartPop = () => {
     setShowCartPop(!showCartPop);
   };
 
+  // 네비게이션
   const navigate = useNavigate();
   const handleWishList = () => {
     navigate("/wishlist");
