@@ -1,33 +1,35 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "../assets/styles/cart.scss";
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../assets/styles/cart.scss';
 
 function Cart() {
   const path = process.env.PUBLIC_URL;
   const [product, setProduct] = useState([]);
+  const minusRef = useRef(null);
 
   useEffect(() => {
-    const nextProduct =
-      JSON.parse(localStorage.getItem("SMSTORE 장바구니")) || [];
+    const nextProduct = JSON.parse(localStorage.getItem('SMSTORE 장바구니')) || [];
     setProduct(nextProduct);
   }, []);
 
   const [count, setCount] = useState();
-  // const onDecrease = (el) => {
-  //   let prdDecrease = JSON.parse(localStorage.getItem("SMSTORE 장바구니"));
-  //   prdDecrease.find((data) => data.id === el.id);
-  //   let idx =
-  // };
+  const onDecrease = () => {
+    const current = JSON.parseInt(localStorage.getItem('SMSTORE 장바구니'));
+    const minusBtn = minusRef.current.button;
+    function findSameId(el) {
+      return current.find(data => data.id === el.id);
+    }
+  };
   const onIncrease = () => {
     if (count < 5) {
-      setCount((prevCount) => prevCount + 1);
+      setCount(prevCount => prevCount + 1);
     } else if (count === 5) {
       alert(`최대 주문수량은 5개입니다.`);
     }
   };
 
   const delCartAll = () => {
-    localStorage.removeItem("SMSTORE 장바구니");
+    localStorage.removeItem('SMSTORE 장바구니');
     setProduct([]);
   };
 
@@ -37,10 +39,9 @@ function Cart() {
       {product.length === 0 ? (
         <div className="empty">
           <img
-            src={path + "/images/cart-nosmile-icon.png"}
+            src={path + '/images/cart-nosmile-icon.png'}
             alt="cart nosmile icon"
-            className="nosmile"
-          ></img>
+            className="nosmile"></img>
           <div className="noCart">앗! 장바구니가 비어 있어요!</div>
           <button className="keepShopping">
             <Link to="/"></Link>쇼핑 계속하기
@@ -62,7 +63,7 @@ function Cart() {
               </tr>
             </thead>
             <tbody>
-              {product.map((item) => {
+              {product.map(item => {
                 const { id, img, celeb, title, dcRate, count, price } = item;
                 const countPrice = price * count;
 
@@ -84,7 +85,9 @@ function Cart() {
                     </td>
                     <td className="quantity">
                       <div className="quanWrapper">
-                        <button className="minus">-</button>
+                        <button className="minus" onClick={onDecrease} ref={minusRef}>
+                          -
+                        </button>
                         <span>{count}</span>
                         <button className="plus" onClick={onIncrease}>
                           +
@@ -100,12 +103,7 @@ function Cart() {
                       <div>
                         <span>{dcRate}</span>
                       </div>
-                      <span>
-                        ₩{" "}
-                        {countPrice
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      </span>
+                      <span>₩ {countPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                     </td>
                     <td className="select">
                       <button>주문하기</button>
